@@ -265,7 +265,7 @@ struct formatter<
   }
 
   template <typename FormatContext>
-  typename FormatContext::iterator format(const T& values, FormatContext& ctx) {
+  typename FormatContext::iterator format(T&& values, FormatContext& ctx) {
     auto out = detail::copy(formatting.prefix, ctx.out());
     size_t i = 0;
     auto it = values.begin();
